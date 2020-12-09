@@ -2,4 +2,7 @@ node {
     stage("git clone") {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sambit54321/maven-project.git']]])
     }
+    stage("build") {
+        sh 'mvn clean package'
+}
 }
