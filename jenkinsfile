@@ -4,5 +4,14 @@ node {
     }
     stage("build") {
         sh 'mvn clean package'
+    stage("upload artifact into nexus") {
+        sh 'mvn deploy'
+    }
+    stage("deploy in tomcat") {
+        sshagent(['tomcatServer']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.232.139:/opt/apache-tomcat-9.0.34/webapps/"
 }
+    }
 }
+
+
