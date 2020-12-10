@@ -26,12 +26,12 @@
   <distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Software Solutions Releases Nexus Repository</name>
+	      <name>Tier1 digital Release Nexus Repository</name>
 	      <url>http://13.232.133.189:8081/repository/netflix-release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Software Solutions Snapshot Nexus Repository </name>
+	      <name>Tier1 digital Snspshot Nexus Repository</name>
 	      <url>http://13.232.133.189:8081/repository/netflix-snapshot/</url>
 	    </snapshotRepository>
   </distributionManagement>
