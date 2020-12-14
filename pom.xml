@@ -204,12 +204,12 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Tier1 digital Release Nexus Repository</name>
-	      <url>http://13.232.133.189:8081/repository/netflix-release/</url>
+	      <url>http://52.66.213.225:8081/repository/netflix-release/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Tier1 digital Snspshot Nexus Repository</name>
-	      <url>http://13.232.133.189:8081/repository/netflix-snapshot/</url>
+	      <url>http://52.66.213.225:8081/repository/netflix-snapshot/</url>
 	    </snapshotRepository>
   </distributionManagement>
 
