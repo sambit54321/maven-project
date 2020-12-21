@@ -2,9 +2,15 @@ node {
     stage("git clone") {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sambit54321/maven-project.git']]])
     }
+    stage("unit test") {
+    sh 'mvn test -Pcoverage'
+    stash includers: 'src/**, pom.xml, target/**, name:'unit'
+    }
     stage("code qualioty check") {
         sh 'mvn sonar:sonar'
     }
+    stage('Test code coverage by Jacoco') {
+    step()
     stage("build") {
         sh 'mvn clean package'
     }
@@ -16,6 +22,6 @@ node {
         sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.232.139:/opt/apache-tomcat-9.0.34/webapps/"
 }
     stage("Email notification") {
-        sh
+        sh " "
     }
 }
